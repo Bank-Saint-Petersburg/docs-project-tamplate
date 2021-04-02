@@ -1,0 +1,22 @@
+@startuml {ProjectName}-entities
+
+entity "Entity Name" as EntityName {
+    attributeFirst : type
+    attributeSecond : type
+}
+
+entity "Other Entity Name" as OtherEntityName {
+    attributeFirst : type
+    attributeSecond : type
+}
+
+enum EnumerationName {
+    FIRST
+    SECOND
+    OTHER_ITEM
+}
+
+EntityName ..> EnumerationName
+EntityName "1" -- "*" OtherEntityName
+
+@enduml

@@ -1,0 +1,49 @@
+@startuml {ProjectName}-components
+
+' Когда предоставляемых и потребляемых интерфейсов мало, лучше объединить их в одну диаграмму.
+' Когда все необходимые интерфейсы не возможно удобно расположить в одной диаграмме, разместите их в разных диаграммах в этом файле.
+
+component "This project name" as ThisProject <<stereotype>>
+
+' Предоставляемые интерфейсы
+interface "GET /collection-name/" as getCollectionName
+interface "GET /collection-name/resourceId" as getCollectionResourceId
+    ThisProject --() getCollectionName
+    ThisProject --() getCollectionResourceId
+
+' Потребляемые интерфейсы
+component "Автоматизированная банковская система" as ABS <<system>>
+interface "consume/endpoint/name" as consumeEndpoint
+    ABS --() consumeEndpoint
+    ThisProject -up-( consumeEndpoint
+
+@enduml
+
+
+
+@startuml {ProjectName}-components-provided-interfaces
+
+' В этот блок можно положить предоставляемые интерфейсы.
+
+component "This project name" as ThisProject <<stereotype>>
+interface "GET /collection-name/" as getCollectionName
+interface "GET /collection-name/resourceId" as getCollectionResourceId
+
+ThisProject --() getCollectionName
+ThisProject --() getCollectionResourceId
+
+@enduml
+
+
+
+@startuml {ProjectName}-components-consumed-interfaces
+
+' В этот блок можно положить потребляемые интерфейсы.
+component "This project name" as ThisProject <<stereotype>>
+
+component "Автоматизированная банковская система" as ABS <<system>>
+interface "consume/endpoint/name" as consumeEndpoint
+ABS --() consumeEndpoint
+ThisProject -up-( consumeEndpoint
+
+@enduml
