@@ -1,3 +1,5 @@
+' Пример описания диаграммы. Удалить перед началом работы.
+
 @startuml {ProjectName}-sequences-{EntityName}-{StateName}
 
 hide empty description
@@ -12,31 +14,5 @@ State1 : exit: this is another string
 State1 --> State2: this is a string
 
 State2 --> [*]: this is a string
-
-@enduml
-
-
-
-@startuml {ProjectName}-sequences-{OtherEntityName}-{StateName}
-
-hide empty description
-
-state fork_state <<fork>>
-
-[*] --> fork_state
-
-fork_state --> State2
-
-fork_state --> State3
-
-state join_state <<join>>
-
-State2 --> join_state
-
-State3 --> join_state
-
-join_state --> State4
-
-State4 --> [*]
 
 @enduml

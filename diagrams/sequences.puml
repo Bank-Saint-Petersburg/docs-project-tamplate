@@ -1,4 +1,9 @@
+' Пример описания диаграммы. Удалить перед началом работы.
+
 @startuml {ProjectName}-sequences-{CaseName}
+
+actor "Mister Bob" as Bob
+participant "Miss Alice" as Alice
 
 Bob -> Alice : hello
 activate Alice
@@ -6,30 +11,5 @@ activate Alice
 Alice -> Alice : some action
 
 return bye
-
-@enduml
-
-
-
-@startuml {ProjectName}-sequences-{OtherCaseName}
-
-participant User
-
-User -> A: DoWork
-activate A
-
-A -> B: << createRequest >>
-activate B
-
-B -> C: DoWork
-activate C
-
-return WorkDone
-
-B --> A: RequestCreated
-deactivate B
-
-A -> User: Done
-destroy A
 
 @enduml
