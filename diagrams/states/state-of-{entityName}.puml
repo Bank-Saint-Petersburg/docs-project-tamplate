@@ -1,6 +1,6 @@
 ' Пример описания диаграммы. Удалить перед началом работы.
 
-@startuml {ProjectName}-sequences-{EntityName}-{StateName}
+@startuml {ProjectName}-sequences-{EntityName}
 
 hide empty description
 
